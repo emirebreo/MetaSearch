@@ -1,0 +1,23 @@
+❯ uvicorn main:app --reload
+INFO:     Will watch for changes in these directories: ['/home/zerobits01/projects/meta-search-improved']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [31682] using statreload
+INFO:     Started server process [31684]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:56454 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56456 - "GET /logo.png HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56454 - "GET /main.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56454 - "GET /favicon.ico HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56458 - "GET /search?s_query=internet+speedtest HTTP/1.1" 307 Temporary Redirect
+[{'link': 'https://fast.com/', 'text': 'Fast.com: Internet Speed Test', 'rank': 1}, {'link': 'https://www.speedcheck.org/', 'text': 'Speed Test by Speedcheck - Test your internet speed', 'rank': 3}, {'link': 'https://projectstream.google.com/speedtest', 'text': 'Speedtest - Google Stadia', 'rank': 4}]
+[{'link': 'http://www.speedcheck.ir/', 'text': 'تست سرعت اینترنت – Speedcheck.ir', 'rank': 2}, {'link': 'https://www.speed.io/', 'text': 'speed.io - Find out your actual internet speed with DSL ...', 'rank': 4}, {'link': 'https://www.speakeasy.net/speedtest/', 'text': 'Speakeasy Internet Speed Test - Check Your Broadband Speed', 'rank': 5}, {'link': 'https://www.speedtest.ir/', 'text': 'Internet Bandwidth Test & Speed Test.تست سرعت اینترنت', 'rank': 7}, {'link': 'https://testmy.net/', 'text': 'TestMy.net Internet Speed Test', 'rank': 8}, {'link': 'https://www.centurylink.com/home/help/internet/internet-speed-test.html', 'text': 'Wifi and Internet Speed Test | CenturyLink', 'rank': 9}, {'link': 'https://speedtest.telstra.com/', 'text': 'Speed Test - Telstra', 'rank': 10}]
+[{'link': 'https://www.speedtest.net/', 'text': 'Speedtest by Ookla - The Global Broadband Speed Test', 'rank': 1}, {'link': 'https://www.att.com/support/speedtest', 'text': 'Internet Speed Test – AT&T Official Site', 'rank': 5}, {'link': 'http://speedtest.telstra.com/', 'text': 'Speed Test - Telstra', 'rank': 6}, {'link': 'http://speedtest.googlefiber.net/', 'text': 'speedtest.googlefiber.net', 'rank': 7}]
+INFO:     127.0.0.1:56458 - "GET /search/?s_query=internet+speedtest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56458 - "GET /search_style.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /favicon.ico HTTP/1.1" 200 OK
+^CINFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [31684]
+INFO:     Stopping reloader process [31682]

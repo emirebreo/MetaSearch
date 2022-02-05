@@ -1,0 +1,76 @@
+<html>
+<head>
+    <title>Meta Search Engine</title>
+    <link href="{{ url_for('static', path='/search_style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <!-- <center>
+        <h2>
+            <a href="/">Meta Search Engine</a> results are here
+        </h2>
+    </center> -->
+    <div id="header">
+        <div id="topbar">
+            <a href="/">
+                <img id="searchbarimage" src="{{ url_for('static', path='/logo.png') }}" alt="logo" />
+            </a>
+            <form>
+                <div id="searchbar" type="text">
+                    <input type="text" id="s_query" name="s_query" placeholder="{{ s_query }}" />
+                    <button id="searchbarbutton">
+                        <svg focusable="false" onclick="search_function()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path
+                                d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+    
+            </form>
+            {# <div>
+                Request is: {{ request }}
+                </br>
+                Request URL is: {{ request.url }}
+                </br>
+                Request dict is: {{ request.__dict__ }}
+            </div> #}
+        </div>
+        <div id="optionsbar">
+         
+            
+        </div>
+    </div>
+        {% for item in items %}
+        <div id="searchresultsarea">
+            <div class="searchresult">
+                {# the usage of " in the href is important only here we use it" #}
+                <h2>{{ item['text'] }}</h2>
+                <a href="{{ item['href'] }}">{{ item['href'] }}</a> 
+                {# {% ... %} for Statements #}
+
+                {# {{ ... }} for Expressions to print to the template output #}
+                
+                {# ...  for Comments not included in the template output #}
+            </div>
+        </div>  
+        {% endfor %}
+        <center>
+            <div class="block-27">
+                <ul>
+                  <li><a href="?s_query={{ s_query }}&indx={{ page-1 }}">&lt;</a></li>
+                  <li class="active"><span>{{ page }}</span></li>
+                  <li><a href="?s_query={{ s_query }}&indx={{ page+1 }}">&gt;</a></li>
+                </ul>
+              </div>
+        </center>
+        <script>
+            function search_function(){
+                inp = document.getElementById('s_query');
+                window.location.href = "/search?s_query="+ inp.value;  
+            }
+        </script>
+
+   
+</body>
+</html>
